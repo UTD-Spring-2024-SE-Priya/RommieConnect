@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/Login.module.css";
+import Link from 'next/link';
 
 export default function LogIn() {
   return (
@@ -24,7 +25,7 @@ export default function LogIn() {
 
             <div className={styles.registerLink}>
               <p>
-                Do not have an account? <a href="#">SignUp</a>
+                Do not have an account? <Link href="/CreateAccountPage">SignUp</Link>
               </p>
             </div>
             <button type="submit" className={styles.logInButton}>
