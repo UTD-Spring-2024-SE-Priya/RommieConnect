@@ -22,9 +22,9 @@
 }
 
 .box {
-  width: 500px;
-  height: 650px;
-  background-color: #f9f6f1;
+  width: 600px;
+  height: 600px;
+  background-color: white;
   position: relative; /* You had position declared twice; keep it relative */
   top: 50%;
   left: 50%;
@@ -40,25 +40,11 @@
   opacity: 1;
 }
 
-.box::after {
-  content: "";
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  width: 75px;
-  height: 75px;
-  background-image: url("/house.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0.7;
-  pointer-events: none;
-}
-
 .loginTitle {
   font-weight: bold;
   font-size: 30px;
   color: #595758;
-  margin-left: -15px;
+  margin-left: 5px;
   margin-top: 50px;
 }
 
@@ -68,101 +54,94 @@
   color: blue;
 }
 
-.inputBox {
-  position: relative;
-  min-width: 120%;
-  height: 50px;
-  margin: 30px 0;
-  margin-left: -35px;
-  
-}
-
-.inputBox input {
-  width: 90%;
-  height: 100%;
-  background: transparent;
-  border: 1px solid lightgray;
-  outline: black;
-  border-radius: 10px;
-  font-size: 16px;
-  padding: 20px 45px 20px 20px;
-  margin-right: auto;
-  margin-left: 15px;
+.namesContainer {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap if the viewport width is too small */
+  justify-content: space-between; /* Spaces items evenly, can adjust as needed */
+  align-items: flex-start; /* Aligns items at the start of the cross axis */
 }
 
 .firstNameBox {
-    position: relative;
-    min-width: 120%;
-    height: 50px;
-    margin: 30px 0;
-    margin-left: -45px;
-  }
-  
-  .firstNameBox input {
-    width: 50%;
-    height: 100%;
-    background: transparent;
-    border: 1px solid lightgray;
-    outline: black;
-    border-radius: 10px;
-    font-size: 16px;
-    padding: 20px 45px 20px 20px;
-    /*margin-right: auto;*/
-    margin-left: 0px;
-    float: left;
-  }
-  .lastNameBox {
-    position: relative;
-    min-width: 120%;
-    height: 50px;
-    margin: 30px 0;
-    margin-left: -35px;
-  }
+  /* Individual adjustments for the first name box */
+  margin-top: 20px;
+  margin-bottom: 10px; /* Adjusts space below */
+  margin-left: 1px; /* Adjust width, assuming 70px total margin between first and last name */
+}
 
-  .lastNameBox input {
-    width: 50%;
-    height: 100%;
-    background: transparent;
-    border: 1px solid lightgray;
-    outline: black;
-    border-radius: 10px;
-    font-size: 16px;
-    padding: 20px 45px 20px 20px;
-    /*margin-right: auto;*/
-    margin-left: 10px;
-    float: right;
-    margin-top: -80px;
-  }
+.lastNameBox {
+  /* Individual adjustments for the last name box */
+  margin-bottom: 20px; /* Potentially moves it upwards depending on following content */
+  margin-top: -60px;
+  margin-left: 200px; /* Moves to the right relative to its normal position */
+}
 
-  .emailBox {
-    position: relative;
-    min-width: 245%;
-    height: 50px;
-    margin: 30px 0;
-    margin-left: -45px;
-  }
-  
-  .emailBox input {
-    width: 50%;
-    height: 100%;
-    background: transparent;
-    border: 1px solid lightgray;
-    outline: black;
-    border-radius: 10px;
-    font-size: 16px;
-    padding: 20px 45px 20px 20px;
-    /*margin-right: auto;*/
-    margin-left: 0px;
-    float: left;
-    margin-top: -90px;
-  }
+.passwordBox,
+.verifyPasswordBox {
+  /* Takes full row each due to 100% width */
+  width: 75%;
+}
+
+.passwordContainer {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap if the viewport width is too small */
+  justify-content: space-between; /* Spaces items evenly, can adjust as needed */
+  align-items: flex-start; /* Aligns items at the start of the cross axis */
+}
+
+.passwordBox {
+  margin-top: -80px;
+  margin-bottom: 10px;
+  margin-left: 2px;
+}
+
+.verifyPasswordBox {
+  margin-bottom: 20px; /* Potentially moves it upwards depending on following content */
+  margin-top: -60px;
+  margin-left: 200px;
+}
+
+.emailBox {
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.emailBox input {
+  width: 100%; /* Ensures the email box is longer and matches the form width */
+  margin-top: 10px;
+  margin-bottom: 10px; /* Consistent spacing below the email box */
+  padding: 0 20px; /* Adjust padding as needed */
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  font-size: 16px;
+  height: 50px;
+}
+
+.firstNameBox input,
+.lastNameBox input {
+  width: 80%; /* Ensures input fields take up the full width of their container */
+  height: 50px;
+  padding: 0 20px; /* Adjust padding as needed */
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.passwordBox input,
+.verifyPasswordBox input {
+  width: 50%; /* Ensures input fields take up the full width of their container */
+  height: 50px;
+  padding: 0 20px; /* Adjust padding as needed */
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  font-size: 16px;
+}
 
 .registerLink {
   margin-top: 20px;
   color: #595758;
   font-weight: light;
   font-size: 15px;
-  margin-left: -15px;
+  margin-left: 7px;
 }
 
 .registerLink a {
@@ -183,25 +162,26 @@
   border: none;
   padding: 10px 20px;
   border-radius: 20px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
   margin-top: 30px;
-  margin-left: -15px;
-  width: 175px;
+  margin-left: 2px;
+  width: 200px;
+  height: 50px;
 }
 
 .passwordDescription {
   font-size: 11px;
   color: gray;
   margin-top: -15px;
-  margin-left: -15px;
+  margin-left: 8px;
 }
 
 .RommieConnect {
   font-size: 30px;
   color: #595758;
-  margin-top: 150px;
-  margin-left: 40px;
+  margin-top: 40px;
+  margin-left: 100px;
   font-weight: bold;
 }
 
