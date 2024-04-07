@@ -36,7 +36,7 @@ export default function CreateAccountPage() {
               </div>
             </div>
             <h2 className={styles.passwordDescription}>
-              Use 8 or more characters with a mix of letters, numbers & symbols
+              Use 10 or more characters with a mix of letters, numbers & symbols
             </h2>
 
             <div className={styles.registerLink}>
