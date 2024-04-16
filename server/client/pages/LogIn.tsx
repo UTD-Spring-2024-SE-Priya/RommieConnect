@@ -1,8 +1,40 @@
-import React from "react";
 import styles from "../styles/Login.module.css";
-import Link from 'next/link';
+import Link from "next/link";
+import validation from "./validation";
+import React, { useState } from "react";
 
+type Values = {
+  email: string;
+  password: string;
+};
+
+type Errors = {
+  email?: string;
+  password?: string;
+};
+
+// State for managing form values with initial values set to empty strings.
 export default function LogIn() {
+  const [values, setValues] = useState<Values>({
+    email: "",
+    password: "",
+  });
+
+  // State for managing form validation errors.
+  const [errors, setError] = useState<Errors>({});
+
+  // Function to handle changes in form inputs.
+  // Automatically updates the state based on the input name and its current value.
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const validationErrors = validation(values);
+    setError(validation(values));
+  };
+
   return (
     <div className={styles.backgroundImage}>
       <div className={styles.topRightButtons}>
@@ -13,7 +45,17 @@ export default function LogIn() {
           <form action="">
             <h1 className={styles.loginTitle}>Log In</h1>
             <div className={styles.inputBox}>
-              <input type="text" placeholder="Email Address" required />
+              <input
+                type="text"
+                placeholder="Email Address"
+                name="email"
+                value={values.email}
+                required
+                onChange={handleChange}
+              />
+              {errors.email && (
+                <p style={{ color: "red", fontSize: "13px" }}>{errors.email}</p>
+              )}
             </div>
             <div className={styles.inputBox}>
               <input type="password" placeholder="Password" required />
@@ -25,7 +67,8 @@ export default function LogIn() {
 
             <div className={styles.registerLink}>
               <p>
-                Do not have an account? <Link href="/CreateAccountPage">SignUp</Link>
+                Do not have an account?{" "}
+                <Link href="/CreateAccountPage">SignUp</Link>
               </p>
             </div>
             <button type="submit" className={styles.logInButton}>

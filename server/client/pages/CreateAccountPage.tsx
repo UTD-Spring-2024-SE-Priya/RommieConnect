@@ -1,8 +1,33 @@
-import React from "react";
+//import React from "react";
 import styles from "../styles/createAcc.module.css";
 import Link from "next/link";
+import React, { useState } from "react";
+import Validation from "./createAccountValidation";
 
 export default function CreateAccountPage() {
+  const [values, setValues] = useState({
+    first: "",
+    last: "",
+    email: "",
+    password: "",
+    verify: "",
+  });
+  const [errors, setErrors] = useState({
+    first: "",
+    last: "",
+    email: "",
+    password: "",
+    verify: "",
+  });
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+    setErrors(Validation(values));
+  };
+
   return (
     <div className={styles.backgroundImage}>
       <div className={styles.topRightButtons}>
@@ -10,33 +35,93 @@ export default function CreateAccountPage() {
       </div>
       <div className={styles.box}>
         <div className={styles.wrapper}>
-          <form action="">
+          <form action="" onSubmit={handleSubmit}>
             <h1 className={styles.loginTitle}>Create Account</h1>
             <div className={styles.namesContainer}>
               <div className={styles.firstNameBox}>
                 {" "}
                 {/* Updated class name for first name */}
-                <input type="text" placeholder="First Name" required />
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  name="first"
+                  onChange={handleInput}
+                  required
+                />
+                {errors.first && (
+                  <span style={{ color: "red" }} className="text-danger">
+                    {" "}
+                    {errors.first}
+                  </span>
+                )}
               </div>
               <div className={styles.lastNameBox}>
                 {" "}
                 {/* Existing class name for last name */}
-                <input type="text" placeholder="Last Name" required />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  name="last"
+                  onChange={handleInput}
+                  required
+                />
+                {errors.last && (
+                  <span style={{ color: "red" }} className="text-danger">
+                    {" "}
+                    {errors.last}
+                  </span>
+                )}
               </div>
             </div>
             <div className={styles.emailBox}>
-              <input type="text" placeholder="Email Address" required />
+              <input
+                type="text"
+                placeholder="Email Address"
+                name="email"
+                onChange={handleInput}
+                required
+              />
+              {errors.email && (
+                <span style={{ color: "red" }} className="text-danger">
+                  {" "}
+                  {errors.email}
+                </span>
+              )}
             </div>
             <div className={styles.passwordsContainer}>
               <div className={styles.passwordBox}>
-                <input type="password" placeholder="Password" required />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  onChange={handleInput}
+                  required
+                />
+                {errors.password && (
+                  <span style={{ color: "red" }} className="text-danger">
+                    {" "}
+                    {errors.password}
+                  </span>
+                )}
               </div>
               <div className={styles.verifyPasswordBox}>
-                <input type="password" placeholder="Verify Password" required />
+                <input
+                  type="password"
+                  placeholder="Verify Password"
+                  name="verify"
+                  onChange={handleInput}
+                  required
+                />
+                {errors.verify && (
+                  <span style={{ color: "red" }} className="text-danger">
+                    {" "}
+                    {errors.verify}
+                  </span>
+                )}
               </div>
             </div>
             <h2 className={styles.passwordDescription}>
-              Use 10 or more characters with a mix of letters, numbers & symbols
+              Use 8 or more characters with a mix of letters, numbers & symbols
             </h2>
 
             <div className={styles.registerLink}>
@@ -47,7 +132,6 @@ export default function CreateAccountPage() {
             <button type="submit" className={styles.logInButton}>
               Sign Up
             </button>
-
             <h3 className={styles.RommieConnect}>RommieConnect</h3>
           </form>
         </div>
