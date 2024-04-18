@@ -30,10 +30,8 @@
   background-color: #ffffff;
   position: absolute;
   top: 9%;
-  left: 30%; /* Adjusted to account for the box's own width in positioning */
-  transform: translateX(
-    -50%
-  ); /* Specifically translating in the X-direction only */
+  left: 30%;
+  transform: translateX(-50%);
   z-index: 10;
   border-radius: 20px;
   display: flex;
@@ -51,10 +49,8 @@
   background-color: #ffffff;
   position: absolute;
   top: 9%;
-  left: 70%; /* Positioned towards the end but will be translated to the left */
-  transform: translateX(
-    -50%
-  ); /* Similarly, translating only in the X-direction */
+  left: 70%;
+  transform: translateX(-50%);
   z-index: 10;
   border-radius: 20px;
   display: flex;
@@ -222,10 +218,10 @@
 .wrapperTwo {
   width: 500px;
   height: 650px;
-  position: relative; /* Needed to position children absolutely */
+  position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center the wrapper */
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -263,8 +259,8 @@
   text-align: center;
   font-style: italic;
   position: absolute;
-  left: -60%; /* Matched to extrovertedQuestion for alignment */
-  top: -140px; /* Adjusted to be directly below the extrovertedQuestion */
+  left: -60%;
+  top: -140px;
 }
 
 .scaleTwoQuestion {
@@ -274,8 +270,8 @@
   text-align: center;
   font-style: italic;
   position: absolute;
-  left: -60%; /* Matched to nightOwlQuestion */
-  top: 10px; /* Adjusted to be directly below the nightOwlQuestion */
+  left: -60%;
+  top: 10px;
 }
 
 .scaleThreeQuestion {
@@ -285,8 +281,8 @@
   text-align: center;
   font-style: italic;
   position: absolute;
-  left: -60%; /* Matched to cleanQuestion */
-  top: 180px; /* Adjusted to be directly below the cleanQuestion */
+  left: -60%;
+  top: 180px;
 }
 
 .extraInfo {
@@ -295,7 +291,7 @@
   color: black;
   position: absolute;
   left: -300px;
-  top: 310px; /* Adjusted if necessary to position correctly */
+  top: 310px;
 }
 
 .scaleButton {

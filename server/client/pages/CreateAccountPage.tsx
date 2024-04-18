@@ -1,4 +1,3 @@
-//import React from "react";
 import styles from "../styles/createAcc.module.css";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -40,7 +39,6 @@ export default function CreateAccountPage() {
             <div className={styles.namesContainer}>
               <div className={styles.firstNameBox}>
                 {" "}
-                {/* Updated class name for first name */}
                 <input
                   type="text"
                   placeholder="First Name"
@@ -130,7 +128,7 @@ export default function CreateAccountPage() {
               </p>
             </div>
             <button type="submit" className={styles.logInButton}>
-              Sign Up
+              <Link href="/AboutMe">Sign Up</Link>
             </button>
             <h3 className={styles.RommieConnect}>RommieConnect</h3>
           </form>

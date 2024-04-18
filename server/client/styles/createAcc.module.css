@@ -25,7 +25,7 @@
   width: 600px;
   height: 600px;
   background-color: white;
-  position: relative; /* You had position declared twice; keep it relative */
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -56,36 +56,33 @@
 
 .namesContainer {
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap if the viewport width is too small */
-  justify-content: space-between; /* Spaces items evenly, can adjust as needed */
-  align-items: flex-start; /* Aligns items at the start of the cross axis */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .firstNameBox {
-  /* Individual adjustments for the first name box */
   margin-top: 20px;
-  margin-bottom: 10px; /* Adjusts space below */
-  margin-left: 1px; /* Adjust width, assuming 70px total margin between first and last name */
+  margin-bottom: 10px;
+  margin-left: 1px;
 }
 
 .lastNameBox {
-  /* Individual adjustments for the last name box */
-  margin-bottom: 20px; /* Potentially moves it upwards depending on following content */
+  margin-bottom: 20px;
   margin-top: -60px;
-  margin-left: 200px; /* Moves to the right relative to its normal position */
+  margin-left: 200px;
 }
 
 .passwordBox,
 .verifyPasswordBox {
-  /* Takes full row each due to 100% width */
   width: 75%;
 }
 
 .passwordContainer {
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap if the viewport width is too small */
-  justify-content: space-between; /* Spaces items evenly, can adjust as needed */
-  align-items: flex-start; /* Aligns items at the start of the cross axis */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .passwordBox {
@@ -95,7 +92,7 @@
 }
 
 .verifyPasswordBox {
-  margin-bottom: 20px; /* Potentially moves it upwards depending on following content */
+  margin-bottom: 20px;
   margin-top: -60px;
   margin-left: 200px;
 }
@@ -106,10 +103,10 @@
 }
 
 .emailBox input {
-  width: 100%; /* Ensures the email box is longer and matches the form width */
+  width: 100%;
   margin-top: 10px;
-  margin-bottom: 10px; /* Consistent spacing below the email box */
-  padding: 0 20px; /* Adjust padding as needed */
+  margin-bottom: 10px;
+  padding: 0 20px;
   border: 1px solid lightgray;
   border-radius: 10px;
   font-size: 16px;
@@ -118,9 +115,9 @@
 
 .firstNameBox input,
 .lastNameBox input {
-  width: 80%; /* Ensures input fields take up the full width of their container */
+  width: 80%;
   height: 50px;
-  padding: 0 20px; /* Adjust padding as needed */
+  padding: 0 20px;
   border: 1px solid lightgray;
   border-radius: 10px;
   font-size: 16px;
@@ -128,9 +125,9 @@
 
 .passwordBox input,
 .verifyPasswordBox input {
-  width: 50%; /* Ensures input fields take up the full width of their container */
+  width: 50%;
   height: 50px;
-  padding: 0 20px; /* Adjust padding as needed */
+  padding: 0 20px;
   border: 1px solid lightgray;
   border-radius: 10px;
   font-size: 16px;

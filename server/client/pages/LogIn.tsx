@@ -13,18 +13,14 @@ type Errors = {
   password?: string;
 };
 
-// State for managing form values with initial values set to empty strings.
 export default function LogIn() {
   const [values, setValues] = useState<Values>({
     email: "",
     password: "",
   });
 
-  // State for managing form validation errors.
   const [errors, setError] = useState<Errors>({});
 
-  // Function to handle changes in form inputs.
-  // Automatically updates the state based on the input name and its current value.
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
