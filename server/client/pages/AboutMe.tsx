@@ -154,7 +154,7 @@ export default function AboutMe() {
         </div>
       </div>
       <button type="submit" className={styles.logInButton}>
-        Continue!
+      <Link href="/mainHomepage">Continue!</Link>
       </button>
     </div>
   );

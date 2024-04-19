@@ -47,7 +47,7 @@ export default function CreateAccountPage() {
                   required
                 />
                 {errors.first && (
-                  <span style={{ color: "red" }} className="text-danger">
+                  <span style={{ color: "red", display:"block" }} className="text-danger">
                     {" "}
                     {errors.first}
                   </span>
@@ -64,7 +64,7 @@ export default function CreateAccountPage() {
                   required
                 />
                 {errors.last && (
-                  <span style={{ color: "red" }} className="text-danger">
+                  <span style={{ color: "red", display:"block" }} className="text-danger">
                     {" "}
                     {errors.last}
                   </span>
@@ -96,7 +96,7 @@ export default function CreateAccountPage() {
                   required
                 />
                 {errors.password && (
-                  <span style={{ color: "red" }} className="text-danger">
+                  <span style={{ color: "red", display:"block" }} className="text-danger">
                     {" "}
                     {errors.password}
                   </span>
@@ -111,7 +111,7 @@ export default function CreateAccountPage() {
                   required
                 />
                 {errors.verify && (
-                  <span style={{ color: "red" }} className="text-danger">
+                  <span style={{ color: "red", display:"block" }} className="text-danger">
                     {" "}
                     {errors.verify}
                   </span>

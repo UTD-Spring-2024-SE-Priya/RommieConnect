@@ -64,11 +64,11 @@ export default function LogIn() {
             <div className={styles.registerLink}>
               <p>
                 Do not have an account?{" "}
-                <Link href="/CreateAccountPage">SignUp</Link>
+                <Link href="/CreateAccountPage">Sign Up</Link>
               </p>
             </div>
             <button type="submit" className={styles.logInButton}>
-              Log In
+              <Link href="/mainHomepage">Log In</Link>
             </button>
 
             <h3 className={styles.RommieConnect}>RommieConnect</h3>
