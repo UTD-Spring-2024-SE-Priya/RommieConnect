@@ -27,7 +27,7 @@ export default function CreatePost() {
           <h2 className={styles.sidebarTitle}>RommieConnect</h2>
           <ul className={styles.navList}>
             <li>
-              <Link href="/create-post" passHref>
+              <Link href="/createPost" passHref>
                 <div className={styles.linkContent}>
                   <Image
                     src="/add.png"
@@ -55,7 +55,7 @@ export default function CreatePost() {
               </Link>
             </li>
             <li>
-              <Link href="/" passHref>
+              <Link href="/mainHomepage" passHref>
                 <div className={styles.linkContent}>
                   <Image
                     src="/home.png"
@@ -84,7 +84,7 @@ export default function CreatePost() {
             </li>
           </ul>
           <button className={styles.signOutButton} onClick={handleSignOut}>
-            Sign Out
+            <Link href="/LogIn">Sign Out</Link>
           </button>
         </div>
         <div className={styles.formContainer}>
@@ -182,7 +182,7 @@ export default function CreatePost() {
             <textarea id="additionalInfo" name="additionalInfo"></textarea>
           </div>
           <button type="submit" className={styles.postButton}>
-            Post
+            <Link href="/mainHomepage">Post</Link>
           </button>
         </div>
       </div>

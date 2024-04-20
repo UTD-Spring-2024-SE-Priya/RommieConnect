@@ -57,9 +57,7 @@ export default function LogIn() {
               <input type="password" placeholder="Password" required />
             </div>
 
-            <h2 className={styles.passwordDescription}>
-              Use 8 or more characters with a mix of letters, numbers & symbols
-            </h2>
+            <h2 className={styles.passwordDescription}></h2>
 
             <div className={styles.registerLink}>
               <p>
@@ -68,7 +66,7 @@ export default function LogIn() {
               </p>
             </div>
             <button type="submit" className={styles.logInButton}>
-              Log In
+              <Link href="/mainHomepage">Log In</Link>
             </button>
 
             <h3 className={styles.RommieConnect}>RommieConnect</h3>

@@ -22,7 +22,7 @@ export default function AboutMe() {
         <div className={styles.wrapper}>
           <h1 className={styles.welcomeTitle}>Welcome to RoomieConnect!</h1>
           <h1 className={styles.welcomeMessage}>
-            Please fill out this survey to let use know more about yourself.
+            Please fill out this survey to let us know more about yourself.
           </h1>
           <h1 className={styles.genderQuestion}>1. Choose your gender.</h1>
           <div className={styles.inputGenderBox}>
@@ -154,7 +154,7 @@ export default function AboutMe() {
         </div>
       </div>
       <button type="submit" className={styles.logInButton}>
-        Continue!
+        <Link href="/mainHomepage">Continue!</Link>
       </button>
     </div>
   );
