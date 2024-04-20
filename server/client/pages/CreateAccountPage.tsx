@@ -55,7 +55,7 @@ export default function CreateAccountPage() {
               </div>
               <div className={styles.lastNameBox}>
                 {" "}
-                {/* Existing class name for last name */}
+                {}
                 <input
                   type="text"
                   placeholder="Last Name"

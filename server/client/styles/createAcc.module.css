@@ -200,3 +200,17 @@
   cursor: pointer;
   width: 100px;
 }
+
+.formInputContainer {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.error {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  color: red;
+  font-size: 12px;
+  width: 100%;
+}
